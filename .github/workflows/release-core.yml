@@ -1,0 +1,31 @@
+name: Release Core Package
+
+# Triggered by tags of the form: core-<UmbracoMajor>.<PackageMajor>.<Patches>
+# e.g. core-17.0.0
+
+on:
+  push:
+    tags:
+      - 'core-[0-9]+.[0-9]+.[0-9]+'
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Setup .NET
+        uses: actions/setup-dotnet@v4
+        with:
+          dotnet-version: 10.0.x
+
+      - name: Compute version
+        run: echo "VERSION=${GITHUB_REF_NAME#core-}" >> "$GITHUB_ENV"
+
+      - name: Build & Pack
+        run: dotnet pack src/EdgeCache/EdgeCache.csproj -c Release /p:Version=${{ env.VERSION }}
+
+      - name: Push to NuGet
+        run: dotnet nuget push "**/*.nupkg" -k ${{ secrets.NUGET_API_KEY }} -s https://api.nuget.org/v3/index.json --skip-duplicate

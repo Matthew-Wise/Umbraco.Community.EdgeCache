@@ -1,0 +1,35 @@
+<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup>
+    <TargetFramework>net10.0</TargetFramework>
+    <Nullable>enable</Nullable>
+    <ImplicitUsings>enable</ImplicitUsings>
+  </PropertyGroup>
+
+  <PropertyGroup>
+    <Product>Umbraco.Community.EdgeCache.CloudFlare</Product>
+    <PackageId>Umbraco.Community.EdgeCache.CloudFlare</PackageId>
+    <Title>Edge Cache - CloudFlare</Title>
+    <Description>CloudFlare provider for Umbraco.Community.EdgeCache.</Description>
+    <PackageTags>umbraco;umbraco-marketplace;cloudflare;edge-cache</PackageTags>
+    <Authors>Matthew Wise</Authors>
+    <Copyright>$([System.DateTime]::UtcNow.ToString(`yyyy`)) © Matthew Wise</Copyright>
+    <PackageProjectUrl>https://github.com/Matthew-Wise/Umbraco.Community.EdgeCache</PackageProjectUrl>
+    <RepositoryUrl>https://github.com/Matthew-Wise/Umbraco.Community.EdgeCache</RepositoryUrl>
+    <PackageReadmeFile>README_nuget.md</PackageReadmeFile>
+    <RepositoryType>git</RepositoryType>
+    <PackageLicenseExpression>MIT</PackageLicenseExpression>
+    <PackageIcon></PackageIcon>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\EdgeCache\EdgeCache.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Include="..\..\docs\README_nuget.md">
+      <Pack>True</Pack>
+      <PackagePath>\</PackagePath>
+    </None>
+  </ItemGroup>
+
+</Project>
