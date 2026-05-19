@@ -4,7 +4,7 @@ using Umbraco.Cms.Api.Common.Attributes;
 using Umbraco.Cms.Web.Common.Authorization;
 using Umbraco.Cms.Web.Common.Routing;
 
-namespace EdgeCache.Controllers
+namespace Umbraco.Community.EdgeCache.Controllers
 {
     [ApiController]
     [BackOfficeRoute("edgecache/api/v{version:apiVersion}")]

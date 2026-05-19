@@ -22,7 +22,7 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\EdgeCache\EdgeCache.csproj" />
+    <ProjectReference Include="..\Umbraco.Community.EdgeCache\Umbraco.Community.EdgeCache.csproj" />
   </ItemGroup>
 
   <ItemGroup>

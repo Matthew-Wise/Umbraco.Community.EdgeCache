@@ -10,7 +10,7 @@ using Umbraco.Cms.Core.DependencyInjection;
 using Umbraco.Cms.Api.Management.OpenApi;
 using Umbraco.Cms.Api.Common.OpenApi;
 
-namespace EdgeCache.Composers
+namespace Umbraco.Community.EdgeCache.Composers
 {
     public class EdgeCacheApiComposer : IComposer
     {
@@ -64,7 +64,7 @@ namespace EdgeCache.Composers
 
             protected override bool CanHandle(ApiDescription apiDescription, ControllerActionDescriptor controllerActionDescriptor)
             {
-                return controllerActionDescriptor.ControllerTypeInfo.Namespace?.StartsWith("EdgeCache.Controllers", comparisonType: StringComparison.InvariantCultureIgnoreCase) is true;
+                return controllerActionDescriptor.ControllerTypeInfo.Namespace?.StartsWith("Umbraco.Community.EdgeCache.Controllers", comparisonType: StringComparison.InvariantCultureIgnoreCase) is true;
             }
 
             public override string Handle(ApiDescription apiDescription) => $"{apiDescription.ActionDescriptor.RouteValues["action"]}";

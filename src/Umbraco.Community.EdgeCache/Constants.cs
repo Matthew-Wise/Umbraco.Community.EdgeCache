@@ -1,4 +1,4 @@
-namespace EdgeCache
+namespace Umbraco.Community.EdgeCache
 {
     public class Constants
     {

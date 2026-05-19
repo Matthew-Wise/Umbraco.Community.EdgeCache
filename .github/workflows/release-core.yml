@@ -25,7 +25,7 @@ jobs:
         run: echo "VERSION=${GITHUB_REF_NAME#core-}" >> "$GITHUB_ENV"
 
       - name: Build & Pack
-        run: dotnet pack src/EdgeCache/EdgeCache.csproj -c Release /p:Version=${{ env.VERSION }}
+        run: dotnet pack src/Umbraco.Community.EdgeCache/Umbraco.Community.EdgeCache.csproj -c Release /p:Version=${{ env.VERSION }}
 
       - name: Push to NuGet
         run: dotnet nuget push "**/*.nupkg" -k ${{ secrets.NUGET_API_KEY }} -s https://api.nuget.org/v3/index.json --skip-duplicate

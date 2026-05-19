@@ -4,7 +4,7 @@ using Microsoft.AspNetCore.Mvc;
 using Umbraco.Cms.Core.Models.Membership;
 using Umbraco.Cms.Core.Security;
 
-namespace EdgeCache.Controllers
+namespace Umbraco.Community.EdgeCache.Controllers
 {
     [ApiVersion("1.0")]
     [ApiExplorerSettings(GroupName = "EdgeCache")]
