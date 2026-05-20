@@ -1,0 +1,25 @@
+<Project>
+
+  <PropertyGroup>
+    <TargetFramework>net10.0</TargetFramework>
+    <Nullable>enable</Nullable>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <LangVersion>latest</LangVersion>
+  </PropertyGroup>
+
+  <PropertyGroup Label="Shared NuGet metadata" Condition="'$(IsPackable)' != 'false'">
+    <Authors>Matthew Wise</Authors>
+    <Copyright>$([System.DateTime]::UtcNow.ToString(`yyyy`)) © Matthew Wise</Copyright>
+    <PackageProjectUrl>https://github.com/Matthew-Wise/Umbraco.Community.EdgeCache</PackageProjectUrl>
+    <RepositoryUrl>https://github.com/Matthew-Wise/Umbraco.Community.EdgeCache</RepositoryUrl>
+    <RepositoryType>git</RepositoryType>
+    <PackageLicenseExpression>MIT</PackageLicenseExpression>
+    <PackageReadmeFile>README_nuget.md</PackageReadmeFile>
+    <PackageTags>umbraco;umbraco-marketplace</PackageTags>
+  </PropertyGroup>
+
+  <ItemGroup Condition="'$(IsPackable)' != 'false'">
+    <None Include="$(MSBuildThisFileDirectory)docs\README_nuget.md" Pack="true" PackagePath="\" />
+  </ItemGroup>
+
+</Project>
