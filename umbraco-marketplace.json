@@ -1,0 +1,14 @@
+{
+    "$schema": "https://marketplace.umbraco.com/umbraco-marketplace-schema.json", 
+    "AuthorDetails": {
+      "Name": "Matthew Wise",
+      "ImageUrl": "https://github.com/Matthew-Wise.png"
+    },
+    "Category": "Performance",
+    "Description": "Purges CDN / edge caches when Umbraco content changes. Ships with provider packages for Cloudflare and Azure Front Door.",
+    "LicenseTypes": [ "Free" ],
+    "IssueTrackerUrl": "https://github.com/Matthew-Wise/Umbraco.Community.EdgeCache/issues",
+    "PackageType": "Package",
+    "Tags": [ "performance", "cdn", "edge-cache", "cloudflare", "azure-front-door" ],
+    "Title": "Edge Cache"
+  }

@@ -1,0 +1,22 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <Product>Umbraco.Community.EdgeCache.CloudFlare</Product>
+    <PackageId>Umbraco.Community.EdgeCache.CloudFlare</PackageId>
+    <Title>Edge Cache - CloudFlare</Title>
+    <Description>CloudFlare provider for Umbraco.Community.EdgeCache.</Description>
+    <PackageTags>umbraco;umbraco-marketplace;cloudflare;edge-cache</PackageTags>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <!--
+      Local dev / solution builds: ProjectReference so no NuGet feed is required.
+      Release pack: PackageReference (toggled via -p:UseCoreAsPackage=true in the release workflow)
+      so the produced nupkg depends on a real published Umbraco.Community.EdgeCache version
+      from nuget.org rather than whatever Version was passed during this provider's pack.
+    -->
+    <ProjectReference Include="..\Umbraco.Community.EdgeCache\Umbraco.Community.EdgeCache.csproj" Condition="'$(UseCoreAsPackage)' != 'true'" />
+    <PackageReference Include="Umbraco.Community.EdgeCache" Condition="'$(UseCoreAsPackage)' == 'true'" />
+  </ItemGroup>
+
+</Project>

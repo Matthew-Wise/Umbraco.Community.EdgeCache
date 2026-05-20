@@ -1,0 +1,25 @@
+<Project Sdk="Microsoft.NET.Sdk.Web">
+
+  <PropertyGroup>
+    <IsPackable>false</IsPackable>
+    <!-- Disable compression so Umbraco backoffice files are served pre-compressed by node, not by dotnet -->
+    <CompressionEnabled>false</CompressionEnabled>
+    <!-- Razor files are needed for the backoffice to work correctly -->
+    <CopyRazorGenerateFilesToPublishDirectory>true</CopyRazorGenerateFilesToPublishDirectory>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Umbraco.Cms" />
+    <PackageReference Include="uSync" />
+    <!-- Opt-in to app-local ICU so globalization APIs behave consistently across platforms -->
+    <PackageReference Include="Microsoft.ICU.ICU4C.Runtime" />
+    <RuntimeHostConfigurationOption Include="System.Globalization.AppLocalIcu" Value="72.1.0.3" Condition="$(RuntimeIdentifier.StartsWith('linux')) or $(RuntimeIdentifier.StartsWith('win')) or ('$(RuntimeIdentifier)' == '' and !$([MSBuild]::IsOSPlatform('osx')))" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\Umbraco.Community.EdgeCache\Umbraco.Community.EdgeCache.csproj" />
+    <ProjectReference Include="..\Umbraco.Community.EdgeCache.CloudFlare\Umbraco.Community.EdgeCache.CloudFlare.csproj" />
+    <ProjectReference Include="..\Umbraco.Community.EdgeCache.AzureFrontDoor\Umbraco.Community.EdgeCache.AzureFrontDoor.csproj" />
+  </ItemGroup>
+
+</Project>

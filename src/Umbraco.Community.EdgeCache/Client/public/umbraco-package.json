@@ -1,0 +1,14 @@
+{
+  "id": "EdgeCache",
+  "name": "EdgeCache",
+  "version": "0.0.0",
+  "allowTelemetry": true,
+  "extensions": [
+    {
+      "name": "Edge Cache Bundle",
+      "alias": "EdgeCache.Bundle",
+      "type": "bundle",
+      "js": "/App_Plugins/EdgeCache/edge-cache.js"
+    }
+  ]
+}

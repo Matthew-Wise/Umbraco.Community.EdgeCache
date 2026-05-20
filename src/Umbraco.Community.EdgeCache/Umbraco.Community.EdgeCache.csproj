@@ -1,0 +1,28 @@
+<Project Sdk="Microsoft.NET.Sdk.Razor">
+
+  <PropertyGroup>
+    <StaticWebAssetBasePath>/</StaticWebAssetBasePath>
+  </PropertyGroup>
+
+  <PropertyGroup>
+    <Product>Umbraco.Community.EdgeCache</Product>
+    <PackageId>Umbraco.Community.EdgeCache</PackageId>
+    <Title>Edge Cache</Title>
+    <Description>Purges CDN / edge caches when Umbraco content changes.</Description>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Umbraco.Cms.Web.Website" />
+    <PackageReference Include="Umbraco.Cms.Web.Common" />
+    <PackageReference Include="Umbraco.Cms.Api.Common" />
+    <PackageReference Include="Umbraco.Cms.Api.Management" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <!-- Don't include the Client folder in the NuGet package -->
+    <Content Remove="Client\**" />
+    <!-- Keep umbraco-package.json visible in the solution, but don't pack it -->
+    <None Include="Client\public\umbraco-package.json" Pack="false" />
+  </ItemGroup>
+
+</Project>
