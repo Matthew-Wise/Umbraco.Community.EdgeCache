@@ -12,6 +12,10 @@
     <PackageVersion Include="Umbraco.Cms.Web.Website" Version="[17.4.1,18.0.0)" />
   </ItemGroup>
 
+  <ItemGroup Label="EdgeCache core — used by providers when packing for release (see provider csprojs)">
+    <PackageVersion Include="Umbraco.Community.EdgeCache" Version="[17.0.0,18.0.0)" />
+  </ItemGroup>
+
   <ItemGroup Label="Test site dependencies">
     <PackageVersion Include="Microsoft.ICU.ICU4C.Runtime" Version="72.1.0.3" />
     <PackageVersion Include="uSync" Version="[17.0.0,18.0.0)" />

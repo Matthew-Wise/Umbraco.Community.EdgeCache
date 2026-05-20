@@ -25,7 +25,10 @@ jobs:
         run: echo "VERSION=${GITHUB_REF_NAME#azurefrontdoor-}" >> "$GITHUB_ENV"
 
       - name: Build & Pack
-        run: dotnet pack src/Umbraco.Community.EdgeCache.AzureFrontDoor/Umbraco.Community.EdgeCache.AzureFrontDoor.csproj -c Release /p:Version=${{ env.VERSION }}
+        # UseCoreAsPackage=true swaps the ProjectReference to core for a PackageReference,
+        # so the produced nupkg depends on a published Umbraco.Community.EdgeCache from
+        # nuget.org rather than whatever Version we're stamping on this provider.
+        run: dotnet pack src/Umbraco.Community.EdgeCache.AzureFrontDoor/Umbraco.Community.EdgeCache.AzureFrontDoor.csproj -c Release /p:Version=${{ env.VERSION }} /p:UseCoreAsPackage=true
 
       - name: Push to NuGet
         run: dotnet nuget push "**/*.nupkg" -k ${{ secrets.NUGET_API_KEY }} -s https://api.nuget.org/v3/index.json --skip-duplicate
