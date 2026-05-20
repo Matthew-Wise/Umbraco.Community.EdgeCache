@@ -16,6 +16,11 @@
     <PackageVersion Include="Umbraco.Community.EdgeCache" Version="[17.0.0,18.0.0)" />
   </ItemGroup>
 
+  <ItemGroup Label="Azure Front Door provider">
+    <PackageVersion Include="Azure.ResourceManager.Cdn" Version="1.5.1" />
+    <PackageVersion Include="Azure.Identity" Version="1.21.0" />
+  </ItemGroup>
+
   <ItemGroup Label="Test site dependencies">
     <PackageVersion Include="Microsoft.ICU.ICU4C.Runtime" Version="72.1.0.3" />
     <PackageVersion Include="uSync" Version="17.3.2" />
