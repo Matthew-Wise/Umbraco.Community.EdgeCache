@@ -357,3 +357,6 @@ src/.idea
 
 # MacOS
 .DS_Store
+
+# Built backoffice bundle (produced by `npm run build` in Client/, rebuilt by the release workflow)
+src/Umbraco.Community.EdgeCache/wwwroot/App_Plugins/EdgeCache/

@@ -1,6 +1,6 @@
 namespace Umbraco.Community.EdgeCache
 {
-    public class Constants
+    public static class Constants
     {
         public const string ApiName = "edgecache";
     }

@@ -32,7 +32,7 @@ namespace Umbraco.Community.EdgeCache.Composers
                 // Along with having a generated swagger JSON file that we can use to auto generate a TypeScript client
                 opt.SwaggerDoc(Constants.ApiName, new OpenApiInfo
                 {
-                    Title = "Edge CacheBackoffice API",
+                    Title = "Edge Cache Backoffice API",
                     Version = "1.0",
                     // Contact = new OpenApiContact
                     // {

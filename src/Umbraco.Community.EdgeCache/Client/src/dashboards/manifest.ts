@@ -1,6 +1,6 @@
 export const manifests: Array<UmbExtensionManifest> = [
   {
-    name: "Edge CacheDashboard",
+    name: "Edge Cache Dashboard",
     alias: "EdgeCache.Dashboard",
     type: "dashboard",
     js: () => import("./dashboard.element.js"),

@@ -21,6 +21,19 @@ jobs:
         with:
           dotnet-version: 10.0.x
 
+      - name: Setup Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: 20
+          cache: npm
+          cache-dependency-path: src/Umbraco.Community.EdgeCache/Client/package-lock.json
+
+      - name: Build backoffice bundle
+        working-directory: src/Umbraco.Community.EdgeCache/Client
+        run: |
+          npm ci
+          npm run build
+
       - name: Compute version
         run: echo "VERSION=${GITHUB_REF_NAME#core-}" >> "$GITHUB_ENV"
 

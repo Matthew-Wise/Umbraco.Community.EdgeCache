@@ -5,7 +5,7 @@
   "allowTelemetry": true,
   "extensions": [
     {
-      "name": "Edge CacheBundle",
+      "name": "Edge Cache Bundle",
       "alias": "EdgeCache.Bundle",
       "type": "bundle",
       "js": "/App_Plugins/EdgeCache/edge-cache.js"

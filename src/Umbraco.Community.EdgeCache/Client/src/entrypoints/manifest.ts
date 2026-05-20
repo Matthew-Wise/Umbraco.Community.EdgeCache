@@ -1,6 +1,6 @@
 export const manifests: Array<UmbExtensionManifest> = [
   {
-    name: "Edge CacheEntrypoint",
+    name: "Edge Cache Entrypoint",
     alias: "EdgeCache.Entrypoint",
     type: "backofficeEntryPoint",
     js: () => import("./entrypoint.js"),
