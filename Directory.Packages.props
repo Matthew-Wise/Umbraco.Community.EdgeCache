@@ -2,20 +2,19 @@
 
   <PropertyGroup>
     <ManagePackageVersionsCentrally>true</ManagePackageVersionsCentrally>
-    <CentralPackageFloatingVersionsEnabled>true</CentralPackageFloatingVersionsEnabled>
   </PropertyGroup>
 
-  <ItemGroup Label="Umbraco">
-    <PackageVersion Include="Umbraco.Cms" Version="17.0.0" />
-    <PackageVersion Include="Umbraco.Cms.Api.Common" Version="17.4.1" />
-    <PackageVersion Include="Umbraco.Cms.Api.Management" Version="17.4.1" />
-    <PackageVersion Include="Umbraco.Cms.Web.Common" Version="17.4.1" />
-    <PackageVersion Include="Umbraco.Cms.Web.Website" Version="17.4.1" />
+  <ItemGroup Label="Umbraco — pinned to the 17.x line so install on 18.x is rejected">
+    <PackageVersion Include="Umbraco.Cms" Version="[17.4.1,18.0.0)" />
+    <PackageVersion Include="Umbraco.Cms.Api.Common" Version="[17.4.1,18.0.0)" />
+    <PackageVersion Include="Umbraco.Cms.Api.Management" Version="[17.4.1,18.0.0)" />
+    <PackageVersion Include="Umbraco.Cms.Web.Common" Version="[17.4.1,18.0.0)" />
+    <PackageVersion Include="Umbraco.Cms.Web.Website" Version="[17.4.1,18.0.0)" />
   </ItemGroup>
 
   <ItemGroup Label="Test site dependencies">
     <PackageVersion Include="Microsoft.ICU.ICU4C.Runtime" Version="72.1.0.3" />
-    <PackageVersion Include="uSync" Version="17.0.0" />
+    <PackageVersion Include="uSync" Version="[17.0.0,18.0.0)" />
   </ItemGroup>
 
 </Project>
