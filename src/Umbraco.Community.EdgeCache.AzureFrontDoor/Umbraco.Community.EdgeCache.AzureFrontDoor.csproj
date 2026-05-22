@@ -17,6 +17,9 @@
     -->
     <ProjectReference Include="..\Umbraco.Community.EdgeCache\Umbraco.Community.EdgeCache.csproj" Condition="'$(UseCoreAsPackage)' != 'true'" />
     <PackageReference Include="Umbraco.Community.EdgeCache" Condition="'$(UseCoreAsPackage)' == 'true'" />
+
+    <PackageReference Include="Azure.ResourceManager.Cdn" />
+    <PackageReference Include="Azure.Identity" />
   </ItemGroup>
 
 </Project>
